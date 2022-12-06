@@ -14,6 +14,9 @@ pipeline{
                     }
                 }
                 stage('2-subjob2'){
+                    when{
+                        branch 'feature'
+                    }
                     steps{
                         sh 'df -h'
                     }
@@ -27,7 +30,7 @@ pipeline{
         }
         stage('4-closing'){
             when{
-                branch "feature"
+                branch "main"
             }
             steps{
                 echo "Team4 branch project"
