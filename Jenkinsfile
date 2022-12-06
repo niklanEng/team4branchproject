@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stages('1-clone'){
+        stage('1-clone'){
             steps{
                 sh 'cat /etc/passwd'
             }
